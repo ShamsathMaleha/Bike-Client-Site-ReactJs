@@ -24,13 +24,14 @@ const priceinfo= parseInt(price)
     fetch('https://limitless-coast-94755.herokuapp.com/create-payment-intent',{
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        
       },
       body: JSON.stringify({priceinfo})
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data.clientSecret);
+       
         setClientSecret(data.clientSecret)
       });
   },[priceinfo])
