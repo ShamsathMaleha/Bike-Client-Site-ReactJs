@@ -21,7 +21,7 @@ const priceinfo= parseInt(price)
     // http://localhost:5000
   useEffect(()=>{
     
-    fetch('https://morning-dusk-71032.herokuapp.com/create-payment-intent',{
+    fetch('https://limitless-coast-94755.herokuapp.com/create-payment-intent',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -96,7 +96,7 @@ const priceinfo= parseInt(price)
             last4: paymentMethod.card.last4,
             transaction: paymentIntent.client_secret.slice('_secret')[0]
           }
-          const url = `https://morning-dusk-71032.herokuapp.com/purchase/${_id}`;
+          const url = `https://limitless-coast-94755.herokuapp.com/purchase/${_id}`;
           fetch(url, {
             method: 'PUT',
             headers: {

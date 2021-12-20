@@ -12,7 +12,7 @@ import './ReviewHome.css'
 const ReviewHome = () => {
     const [reviews, setreviews] = useState([]);
     useEffect(() => {
-        const uri = `https://morning-dusk-71032.herokuapp.com/review`
+        const uri = `https://limitless-coast-94755.herokuapp.com/review`
         fetch(uri)
             .then(res=>res.json())
             .then(data => {

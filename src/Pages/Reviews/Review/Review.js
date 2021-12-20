@@ -47,7 +47,7 @@ const Review = () => {
        
             
             console.log(data)
-            fetch('https://morning-dusk-71032.herokuapp.com/review', {
+            fetch('https://limitless-coast-94755.herokuapp.com/review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

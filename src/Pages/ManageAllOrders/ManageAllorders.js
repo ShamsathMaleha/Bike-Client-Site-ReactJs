@@ -13,7 +13,7 @@ const ManageAllorders = () => {
 
     useEffect(() => {
        
-        fetch('https://morning-dusk-71032.herokuapp.com/purchase')
+        fetch('https://limitless-coast-94755.herokuapp.com/purchase')
             .then(res => res.json())
             .then(data => {
                
@@ -33,7 +33,7 @@ const ManageAllorders = () => {
 
         const proceed = window.confirm('are you sure, you want to delete?');
         if(proceed){
-            const url = `https://morning-dusk-71032.herokuapp.com/purchase/${id}`
+            const url = `https://limitless-coast-94755.herokuapp.com/purchase/${id}`
             fetch (url,{
                 method:'DELETE',
                

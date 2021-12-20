@@ -41,7 +41,7 @@ const Purchase = () => {
         data.purchase = car;
         
         console.log(data)
-        fetch('https://morning-dusk-71032.herokuapp.com/purchase', {
+        fetch('https://limitless-coast-94755.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -19,7 +19,7 @@ const [item,setItem]=useState({})
       
     useEffect(() => {
         //  setLoading(true)
-        fetch(`https://morning-dusk-71032.herokuapp.com/purchase/${OId}`)
+        fetch(`https://limitless-coast-94755.herokuapp.com/purchase/${OId}`)
             .then(res => res.json())
             .then(data => {
               
