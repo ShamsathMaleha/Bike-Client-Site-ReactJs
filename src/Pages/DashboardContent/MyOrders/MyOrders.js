@@ -83,8 +83,11 @@ const MyOrders = () => {
                                         <td>{or.status} </td>
 {  or.payment ? 'Paid':
                  <td><button onClick={()=>handlePayment(or._id)} className="btn btn-outline-danger"> Pay </button></td>
-}                                        <td><button onClick={()=>handleDeleteUser(or._id)} className="btn btn-outline-danger"> <Icon size={15} icon={trashO} /></button></td>
-                                    </tr>
+}                                       
+{     or.status=='pending'       &&            
+
+<td><button onClick={()=>handleDeleteUser(or._id)} className="btn btn-outline-danger"> <Icon size={15} icon={trashO} /></button></td>
+}                                    </tr>
                                 </>)
                             }
 

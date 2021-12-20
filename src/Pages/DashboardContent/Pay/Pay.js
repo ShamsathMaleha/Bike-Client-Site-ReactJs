@@ -8,6 +8,9 @@ import CheckoutForm from './CheckoutForm';
 
 
 const stripeLoad = loadStripe('pk_test_51K073dH9Kuv7UeNyycym0fwuYdUHloSde7mO48UY49sDivKoicG5NHPWU674Gg79oUB87gNesOUeUDP1NqE5qmEU00CMIjMzgp')
+
+// STRIPE=pk_test_51K073dH9Kuv7UeNyycym0fwuYdUHloSde7mO48UY49sDivKoicG5NHPWU674Gg79oUB87gNesOUeUDP1NqE5qmEU00CMIjMzgp
+
 const Pay = () => {
 const {OId}=useParams();
 const [order,setOrder]=useState({})

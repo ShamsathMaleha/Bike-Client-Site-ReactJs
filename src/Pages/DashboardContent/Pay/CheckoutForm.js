@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Spinner } from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 const CheckoutForm = (props) => {
     const {name, _id} = props.order;
     const {price} = props.item;
     const stripe = useStripe();
     const elements = useElements();
     // const {user}= useAuth()
-
+    const history =useHistory()
+const priceinfo= parseInt(price)
 
   const [error, setError]= useState('');
   const [success, setSuccess] =useState('')
@@ -16,21 +17,23 @@ const CheckoutForm = (props) => {
   const [process, setprocess]=useState(false)
 
 
-
+//   https://morning-dusk-71032.herokuapp.com
+    // http://localhost:5000
   useEffect(()=>{
-    //   https://morning-dusk-71032.herokuapp.com
-    fetch(' http://localhost:5000/create-payment-intent',{
+    
+    fetch('https://morning-dusk-71032.herokuapp.com/create-payment-intent',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({price})
+      body: JSON.stringify({priceinfo})
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data)
-        setClientSecret(data.clientSecret)});
-  },[price])
+        console.log(data.clientSecret);
+        setClientSecret(data.clientSecret)
+      });
+  },[priceinfo])
 
 
 
@@ -103,7 +106,10 @@ const CheckoutForm = (props) => {
           
           })
           .then(res=>res.json())
-          // .then(data=>)
+          // .then(data=>{
+          //   alert('Payment Successful')
+          //   history.push('/')
+          // })
         }
 
       

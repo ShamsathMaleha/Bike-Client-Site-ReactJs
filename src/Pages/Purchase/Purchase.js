@@ -54,7 +54,7 @@ const Purchase = () => {
                     alert('Order processed Successfully');
                     // clearTheCart();
                     reset();
-                    history.push('/')
+                    history.push('/dashboard/myOrder')
                 }
             })
        
