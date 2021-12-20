@@ -1,8 +1,31 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './CheckoutForm';
 
 
-
+const stripeLoad = loadStripe('pk_test_51K073dH9Kuv7UeNyycym0fwuYdUHloSde7mO48UY49sDivKoicG5NHPWU674Gg79oUB87gNesOUeUDP1NqE5qmEU00CMIjMzgp')
 const Pay = () => {
+const {OId}=useParams();
+const [order,setOrder]=useState({})
+const [item,setItem]=useState({})
+
+      
+    useEffect(() => {
+        //  setLoading(true)
+        fetch(`https://morning-dusk-71032.herokuapp.com/purchase/${OId}`)
+            .then(res => res.json())
+            .then(data => {
+              
+              setItem(data.purchase)
+                setOrder(data)
+                
+            })
+           
+    }, [])
 
     
 
@@ -11,8 +34,19 @@ const Pay = () => {
         <div>
         <div className="text-center my-5">
 
-            <h1>Payment system comming soon</h1>
+            <h1>Payment for {item.name}</h1>
 
+            
+
+        </div>
+        <div className="text-center my-5">
+        <Elements stripe={stripeLoad}>
+            <CheckoutForm 
+            order={order}
+            item={item}
+            
+            />
+            </Elements>
         </div>
 
 

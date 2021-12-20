@@ -10,7 +10,7 @@ const Banner = () => {
          
 
             <div className="top-banner">
-                <h1>The Best Car Dealer</h1>
+                <h1>The Best Bike Dealer</h1>
                 <h5 >Ride Your Own Path</h5>
                 <button className="btn btn-warning mt-3">Explore</button>
             </div>

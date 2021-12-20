@@ -32,30 +32,7 @@ const Review = () => {
       }
 
 
-    //   const handleSubmit = (data)=>{
-       
-    //     data.rating = rating;
-    //     data.name = user.displayName;
-    //     data.email = user.email
-        
-    //     console.log(data)
-        // fetch('https://powerful-bastion-59588.herokuapp.com/review', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         if (result.insertedId) {
-        //             alert('Order processed Successfully');
-        //             // clearTheCart();
-                    
-        //             history.push('/')
-        //         }
-        //     })
-    //   }
+
 
       const {
         register,

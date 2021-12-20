@@ -45,10 +45,10 @@ const Sidebar = () => {
                         {!admin &&
 
                             <>
-                                <MenuItem >
+                                {/* <MenuItem >
 
-                                    <Link to={`${url}/pay`}> Pay</Link>
-                                </MenuItem>
+                                    <Link to={`${url}/pay/:OId`}> Pay</Link>
+                                </MenuItem> */}
                                 <MenuItem >
                                     My Order
                                     <Link to={`${url}/myOrder`}> </Link>
@@ -107,7 +107,7 @@ const Sidebar = () => {
                     {/* <Route exact path={path}>
                         <Dashboard />
                     </Route> */}
-                    <Route  path={`${path}/pay`}>
+                    <Route  path={`${path}/pay/:OId`}>
                         <Pay />
                     </Route>
                     <Route exact path={`${path}/myOrder`}>

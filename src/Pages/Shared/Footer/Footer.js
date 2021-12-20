@@ -16,9 +16,9 @@ const Footer = () => {
                     <div className="col-md-3 mb-md-0 mb-3">
                         <h5 className="text-uppercase">OUR LATEST BLOG</h5>
                         <ul className="list-unstyled ">
-                            <li><HashLink className="footer-link " to="#!">Latest Brand</HashLink></li>
-                            <li><HashLink className="footer-link" to="#!">All Cars</HashLink></li>
-                            <li><HashLink className="footer-link" to="#!">Book Cars</HashLink></li>
+                            <li><HashLink className="footer-link " to="/#latest">Latest Brand</HashLink></li>
+                            <li><HashLink className="footer-link" to="/bikes">All Bikes</HashLink></li>
+                            <li><HashLink className="footer-link" to="/bikes">Book Bikes</HashLink></li>
                         </ul>
                     </div>
                     <div className="col-md-3 mb-md-0 mb-3">
