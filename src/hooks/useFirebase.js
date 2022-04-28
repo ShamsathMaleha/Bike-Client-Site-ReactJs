@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, getIdToken, signInWithPopup, signOut, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,getIdToken, signOut, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import initializeAuth from '../firebase/firebase.initialize';
 
 initializeAuth()
@@ -11,7 +11,7 @@ const useFirebase = () => {
     const [admin, setAdmin] = useState(false)
     const [token, setToken] = useState('')
 
-    const googleProvider = new GoogleAuthProvider();
+  
     const auth = getAuth()
 
 
@@ -26,12 +26,7 @@ const useFirebase = () => {
                 // save user to db
                 saveUser(email, name, 'POST')
 
-                // send name to firebase after creation
-                updateProfile(auth.currentUser, {
-                    displayName: name
-                }).then(() => {
-                }).catch((error) => {
-                });
+              
 
                 history.replace('/')
 
@@ -102,21 +97,7 @@ const useFirebase = () => {
     }
 
 
-    const signInWithGoogle = (location, history) => {
-
-        setIsLoading(true);
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-
-                const user = result.user;
-                saveUser(user.email, user.displayName, 'PUT')
-                setAuthError('');
-                const destination = location?.state?.from || '/';
-                history.replace(destination)
-            }).catch((error) => {
-                setAuthError(error.message);
-            }).finally(() => setIsLoading(false));
-    }
+  
 
     // observer user state 
     useEffect(() => {
@@ -149,7 +130,7 @@ const useFirebase = () => {
         logOut,
         loginUser,
         authError,
-        signInWithGoogle
+        
 
     }
 };

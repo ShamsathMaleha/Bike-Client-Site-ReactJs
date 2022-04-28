@@ -46,59 +46,6 @@ const Review = () => {
             }
         ]
 
-    // const {user}= useAuth()
-    // const [rating, setRating] = useState(0) // initial rating value
-    // const [data,setData] =useState({})
-    // const history = useHistory()
-
-
-    // const handleBlur =(e)=>{
-    //     const field = e.target.name;
-    //     const value = e.target.value;
-    //     const newData ={...data};
-    //     newData[field] =value;
-    //     setData(newData);
-    //     console.log(newData)
-    // }
-
-
-    // const handleRating = (rate) => {
-    //     setRating(rate)
-    //     // Some logic
-    //   }
-
-
-
-
-    //   const {
-    //     register,
-    //     handleSubmit,
-    //     reset,
-    //     formState: { errors },
-    // } = useForm();
-
-    // const onSubmit = data => {
-
-
-       
-            
-    //         console.log(data)
-    //         fetch('https://limitless-coast-94755.herokuapp.com/review', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify(data)
-            // })
-            //     .then(res => res.json())
-            //     .then(result => {
-            //         if (result.insertedId) {
-            //             alert('Thank you for sending your feedback');
-            //             // clearTheCart();
-                        
-            //             history.push('/')
-            //         }
-            //     })
     }
     return (
         <>
